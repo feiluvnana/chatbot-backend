@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "dist",
+    "module": "nodenext",
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "migration/**/*"]
+}
