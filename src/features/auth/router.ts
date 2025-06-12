@@ -13,9 +13,9 @@ openapiRegistry.registerPath({
   tags: ["Authentication"],
   summary: "Sử dụng để đăng nhập với Google. (Không gọi bằng Swagger được đâu. Hãy dùng browser.)",
   responses: {
-    "200": {
+    "302": {
       description: "Đăng nhập Google thành công.",
-      content: { "application/json": { schema: z.object({ token: z.string() }) } },
+      content: { "text/plain": { schema: z.string() } },
     },
     "401": {
       description: "Đăng nhập Google thất bại.",

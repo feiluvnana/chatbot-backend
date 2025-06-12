@@ -14,7 +14,7 @@ async function main() {
   app.use(chatsRouter);
   app.use("/docs", swaggerUi.serve, swaggerUi.setup(generateOpenAPIDocument()));
   app.use((_, res) => {
-    ErrorCommon.notFound(res, "Không tìm thấy đường dẫn được yêu cầu.");
+    if (!res.headersSent) ErrorCommon.notFound(res, "Không tìm thấy đường dẫn được yêu cầu.");
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   app.use((err: any, req: Request, res: Response, next: NextFunction) => {

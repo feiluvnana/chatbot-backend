@@ -9,8 +9,9 @@
 
 1. Vào một project trên Google Cloud Console (hoặc tạo mới) và bật Google People API.
 2. Vào "APIs & Services" > "Credentials" > "Create Credentials" > OAuth Client ID.
-3. Làm các bước yêu cầu để có thể tạo OAuth Client ID, nhớ trong đó có cả endpoint để callback.
-4. Thêm `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` và `CALLBACK_URL` vào trong .env. (`CALLBACK_URL` phải có dạng `"${base_url}/v1/auth/google/callback"`)
+3. Làm các bước yêu cầu để có thể tạo OAuth Client ID, nhớ trong đó có cả 2 endpoint để callback (Authorized redirect URIs). Một endpoint là `{base_url}/v1/auth/google/callback`, một endpoint là `{base_url}/v1/auth/google/failure`.
+4. Thêm `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` và `CALLBACK_URL` vào trong .env. (`CALLBACK_URL` chính là url thứ nhất ở trên)
+5. Thêm `FRONTEND_URL` vào trong env. Đây sẽ là endpoint để backend redirect lại về frontend, và token sẽ được đính kèm vào query. VD: `http://localhost:5000/home?token=...`.
 
 ## Setup ChatCore
 
