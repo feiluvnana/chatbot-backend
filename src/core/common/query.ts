@@ -6,7 +6,7 @@ export class QueryCommon {
     return trx
       .selectFrom("users")
       .selectAll()
-      .where(sql`users.provider_data->>"$.id"`, "=", params.id)
+      .where(sql`JSON_EXTRACT(users.provider_data, "$.id")`, "=", params.id)
       .executeTakeFirst();
   }
 
